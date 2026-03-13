@@ -1,4 +1,3 @@
-
 class EvictionPolicy:
 
     def record_access(self, node):

@@ -53,8 +53,6 @@ class ARCPolicy(EvictionPolicy):
             self.t2.appendleft(node)
             return
 
-        # new node
-
         if len(self.t1) + len(self.b1) == self.capacity:
 
             if len(self.t1) < self.capacity:

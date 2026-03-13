@@ -35,9 +35,7 @@ def print_results(results):
 def print_comparison_table(results):
 
     print("\n================ PERFORMANCE COMPARISON TABLE ================\n")
-
     print(f"{'Policy':<12}{'Hit Rate':<12}{'Miss Rate':<12}{'Avg Latency':<15}{'Evictions':<12}")
-
     print("-" * 63)
 
     for policy, metrics in results.items():
@@ -74,25 +72,19 @@ def main():
     for policy in policies:
 
         print("Running:", policy)
-
         results[policy] = run_policy(policy)
 
-    # Detailed metrics
+    
     print_results(results)
-
-    # Comparison table
     print_comparison_table(results)
 
-    # Best policy
     best_policy, hit_rate = find_best_policy(results)
 
     print("\n================ BEST POLICY ================")
     print(f"Best Cache Policy: {best_policy}")
     print(f"Best Hit Rate: {hit_rate:.4f}")
 
-    # Graphs
     plotter = Plotter(results)
-
     plotter.plot_hit_rate()
     plotter.plot_miss_rate()
     plotter.plot_latency()
