@@ -4,6 +4,8 @@ from cache.policies.lru import LRUCachePolicy
 from cache.policies.lfu import LFUCachePolicy
 from cache.policies.random_policy import RandomPolicy
 from cache.policies.priority_policy import PriorityPolicy
+from cache.policies.arc import ARCPolicy
+from cache.policies.tinylfu import TinyLFUPolicy
 
 
 class CacheEngine:
@@ -24,6 +26,10 @@ class CacheEngine:
             self.policy = RandomPolicy()
         elif policy == "Priority":
             self.policy = PriorityPolicy()
+        elif policy == "ARC":
+            self.policy = ARCPolicy(capacity)
+        elif policy == "TinyLFU":
+            self.policy = TinyLFUPolicy()    
         else:
             raise ValueError("Invalid policy")
 

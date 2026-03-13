@@ -67,7 +67,7 @@ def find_best_policy(results):
 
 def main():
 
-    policies = ["LRU", "LFU", "Random", "Priority"]
+    policies = ["LRU", "LFU", "Random", "Priority", "ARC", "TinyLFU"]
 
     results = {}
 
