@@ -10,7 +10,7 @@ class PriorityPolicy(EvictionPolicy):
 
     def record_access(self, node):
 
-        self.priority_counter += 1
+        self.priority_counter += 0.5
         heapq.heappush(self.heap, (self.priority_counter, node))
 
     def evict(self):
